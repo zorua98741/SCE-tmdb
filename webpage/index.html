@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<style></style>
+	<head>
+		<title>SCE-TMDB</title>
+		<!-- https://caligatio.github.io/jsSHA/ -->
+		<script type="text/javascript" src="sha.js">const jsSHA = require("jssha");</script>
+		<script src="tmdb.js"></script>
+		<link rel="stylesheet" href="tmdb.css">
+	</head>
+	<body>
+		<input type="text" size="10" id="titleIDText" onkeyup="generateHash(); generateURL()">
+		<select id="platform" onchange="generateURL()">
+			<option>PS3 (XML)</option>
+			<option>PS4 (JSON)</option>
+		</select>
+		<br><br>
+		
+		<table>
+			<tr>
+				<th>Input</th>
+				<th>Output</th>
+			</tr>
+			<tr>
+				<td><p id="input">___</p></td>
+				<td><p id="output">___</p></td>
+			</tr>
+		</table>
+		<a href="" id="url" target="_blank">___</a>
+	</body>
+</html>
