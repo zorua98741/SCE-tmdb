@@ -1,4 +1,12 @@
 table, th, td {
 	border: 1px solid black;
 	border-collapse: collapse;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+ul {
+	display: inline-block;
 }
