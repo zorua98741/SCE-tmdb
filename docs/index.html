@@ -6,9 +6,16 @@
 		<!-- https://caligatio.github.io/jsSHA/ -->
 		<script type="text/javascript" src="sha.js">const jsSHA = require("jssha");</script>
 		<script src="tmdb.js"></script>
-		<link rel="stylesheet" href="tmdb.css">
+		<link rel="stylesheet" href="light-mode.css" id="light-mode">
 	</head>
 	<body>
+		<div class="navigation">
+			<span>Theme:</span>
+			<select id="theme" onchange="changeTheme()">
+				<option>Light</option>
+				<option>Dark</option>
+			</select>
+		</div>
 		<h1>SCE-TMDB</h1>
 		<section>
 			<h2>What is this?</h2>
@@ -56,11 +63,11 @@
 			<h2>How are URLs formed?</h2>
 			<p>A TMDB URL is formed using 5 notable parts, these are the domain, path, titleID, hash, and file format.</p>
 			<ul>
-				<li>The domain remains the same, it does not change regardless of the system or titleID used, it is <b>http://tmdb.np.dl.playstation.net/</b>.</li>
-				<li>The path can be either <b>tmdb</b> for XML/PS3 URLs, or <b>tmdb2</b> for JSON/PS4 URLs.</li>
-				<li>The titleID, sometimes referred to as the game ID, is a combination of letters denoting information such as the region of the game, followed by 5 numbers. More information can be found <a href="https://www.psdevwiki.com/ps3/TITLE_ID#Description" target="_blank">here</a>. Note that when generating TMDB links <b>_00</b> is appended to the end of the titleID.</li>
-				<li>The hash uses Hash-based message authentication code, or HMAC, where the input text is the previously mentioned <b>titleID</b>, and the key is in hex format, <b>F5DE66D2680E255B2DF79E74F890EBF349262F618BCAE2A9ACCDEE5156CE8DF2CDF2D48C71173CDC2594465B87405D197CF1AED3B7E9671EEB56CA6753C2E6B0</b> </li>
-				<li>The file format can be either <b>.xml</b> (PS3), or <b>.json</b> (PS4).</li>
+				<li>The <em>domain</em> remains the same, it does not change regardless of the system or titleID used, it is <b>http://tmdb.np.dl.playstation.net/</b>.</li>
+				<li>The <em>path</em> can be either <b>tmdb</b> for XML/PS3 URLs, or <b>tmdb2</b> for JSON/PS4 URLs.</li>
+				<li>The <em>titleID</em>, sometimes referred to as the game ID, is a combination of letters denoting information such as the region of the game, followed by 5 numbers. More information can be found <a href="https://www.psdevwiki.com/ps3/TITLE_ID#Description" target="_blank">here</a>. Note that when generating TMDB links <b>_00</b> is appended to the end of the titleID.</li>
+				<li>The <em>hash</em> uses Hash-based message authentication code, or HMAC, where the input text is the previously mentioned <b>titleID</b>, and the key is in hex encoding as <b>F5DE66D2680E255B2DF79E74F890EBF349262F618BCAE2A9ACCDEE5156CE8DF2CDF2D48C71173CDC2594465B87405D197CF1AED3B7E9671EEB56CA6753C2E6B0</b> </li>
+				<li>The <em>file format</em> can be either <b>.xml</b> (PS3), or <b>.json</b> (PS4).</li>
 			</ul>
 		</section>
 		

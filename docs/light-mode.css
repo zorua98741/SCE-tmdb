@@ -1,0 +1,27 @@
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+body {
+	background-color: white;
+	color: black;
+}
+ul {
+	display: inline-block;
+}
+
+.navigation {
+	background-color: #292929;
+	color: white;
+	position: fixed;
+	width: 100%;
+	top: 0px;
+	padding: 5px 5px 5px 5px;
+}
+h1 {
+	margin-top: 30px;
+}

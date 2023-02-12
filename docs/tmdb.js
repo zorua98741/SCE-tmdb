@@ -15,6 +15,7 @@ function generateHash() {
 	document.getElementById("output").innerHTML = output;
 	document.getElementById("input").innerHTML = inputUpper;
 }
+
 function generateURL() {
 	var pType = document.getElementById("platform").value;
 	if (pType == "PS4 (JSON)") {
@@ -30,5 +31,17 @@ function generateURL() {
 		var genURL = tmdb + titleID + "_" + hash + "/" + titleID + extension;
 		document.getElementById("url").innerHTML = genURL;
 		document.getElementById("url").href = genURL;
+	}
+}
+
+function changeTheme() {
+	var element = document.body;
+	var theme = document.getElementById("theme").value;
+	const mode = document.querySelector("#light-mode");
+	if (theme == "Light") {
+		mode.href = "light-mode.css";
+	}
+	if (theme == "Dark") {
+		mode.href = "dark-mode.css";
 	}
 }

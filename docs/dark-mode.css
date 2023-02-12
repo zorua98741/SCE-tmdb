@@ -1,0 +1,33 @@
+table, th, td {
+	border: 1px solid white;
+	border-collapse: collapse;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+body {
+	background-color: #292929;
+	color: white;
+}
+ul {
+	display: inline-block;
+}
+
+.navigation {
+	background-color: #a1a1a1;
+	color: black;
+	position: fixed;
+	width: 100%;
+	top: 0px;
+	padding: 5px 5px 5px 5px;
+}
+h1 {
+	margin-top: 30px;
+}
+a:link {
+	color: #00ccff;
+}
+a:visited {
+	color: #b80000;
+}
