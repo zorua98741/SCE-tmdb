@@ -9,6 +9,7 @@ table, th, td {
 body {
 	background-color: white;
 	color: black;
+	font-family: Arial, sans-serif, "Times New Roman";
 }
 ul {
 	display: inline-block;
