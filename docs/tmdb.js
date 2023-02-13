@@ -54,8 +54,10 @@ function getCookie() {
 	console.log(decodedCookie);
 	if (decodedCookie == "theme=light-mode") {
 		mode.href = "light-mode.css";
+		document.getElementById("theme").value = "Light";
 		}
 	if (decodedCookie == "theme=dark-mode") {
 		mode.href = "dark-mode.css";
+		document.getElementById("theme").value = "Dark";
 		}
 }
