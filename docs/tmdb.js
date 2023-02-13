@@ -40,8 +40,22 @@ function changeTheme() {
 	const mode = document.querySelector("#light-mode");
 	if (theme == "Light") {
 		mode.href = "light-mode.css";
+		document.cookie = "theme=light-mode";
 	}
 	if (theme == "Dark") {
 		mode.href = "dark-mode.css";
+		document.cookie = "theme=dark-mode";
 	}
+}
+
+function getCookie() {
+	const mode = document.querySelector("#light-mode");
+	let decodedCookie = decodeURIComponent(document.cookie);
+	console.log(decodedCookie);
+	if (decodedCookie == "theme=light-mode") {
+		mode.href = "light-mode.css";
+		}
+	if (decodedCookie == "theme=dark-mode") {
+		mode.href = "dark-mode.css";
+		}
 }

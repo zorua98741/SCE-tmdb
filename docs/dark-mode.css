@@ -40,3 +40,6 @@ a:link {
 a:visited {
 	color: #b80000;
 }
+a {
+	overflow-wrap: break-word;
+}
