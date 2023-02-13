@@ -8,14 +8,14 @@
 		<link rel="stylesheet" href="light-mode.css" id="light-mode">
 	</head>
 	<body>
+		<div class="navigation">
+			<span>Theme:</span>
+			<select id="theme" onchange="changeTheme()">
+				<option>Light</option>
+				<option>Dark</option>
+			</select>
+		</div>
 		<div class="content">
-			<div class="navigation">
-				<span>Theme:</span>
-				<select id="theme" onchange="changeTheme()">
-					<option>Light</option>
-					<option>Dark</option>
-				</select>
-			</div>
 			<h1>SCE-TMDB</h1>
 			<section>
 				<h2>What is this?</h2>
@@ -91,9 +91,7 @@
 					</tr>
 				</table>
 				<a href="" id="url" target="_blank"></a>
-			</section>
-			
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet pretium ligula. Morbi purus tortor, iaculis quis viverra eu, tincidunt ut justo. Sed dapibus volutpat mauris et pretium. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum vitae massa sed velit pharetra rutrum. Sed pharetra sit amet lectus nec efficitur. Duis condimentum leo urna, eget pellentesque orci efficitur ut. Suspendisse egestas vehicula neque ultrices rhoncus. Pellentesque sem lacus, euismod a laoreet ut, lacinia vitae nulla. In lobortis felis a eros pellentesque aliquam id quis libero. Nunc condimentum, lacus non feugiat blandit, eros purus pellentesque purus, at facilisis erat purus a elit. Etiam ullamcorper molestie sapien, eu mattis lacus. Praesent nulla odio, pharetra vel odio sit amet, commodo pellentesque arcu. Etiam sed ligula ex.</p>
+			</section>			
 		</div>
 	</body>
 </html>
