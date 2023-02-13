@@ -7,19 +7,23 @@ table, th, td {
 	padding-bottom: 5px;
 }
 body {
-	background-color: #292929;
+	background-color: #383838;
 	color: white;
 	font-family: Arial, sans-serif, "Times New Roman";
+	margin: 0px;
+}
+.content {
+	background-color: #292929;
+	margin-left: 100px;
+	margin-right: 100px;
 }
 ul {
-	display: inline-block;
+	overflow-wrap: break-word;
 }
 
 .navigation {
 	background-color: #a1a1a1;
 	color: black;
-	position: fixed;
-	width: 100%;
 	top: 0px;
 	padding: 5px 5px 5px 5px;
 }
