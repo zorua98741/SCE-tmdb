@@ -43,3 +43,8 @@ a:visited {
 a {
 	overflow-wrap: break-word;
 }
+
+.invis  {
+	border: none;
+	font-weight: normal;
+}
