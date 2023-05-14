@@ -4,6 +4,10 @@ import requests
 from urllib.request import urlopen
 import re
 import csv
+from PIL import Image
+import urllib.request
+import os
+import shutil
 
 tmdb_key = bytearray.fromhex(
     'F5DE66D2680E255B2DF79E74F890EBF349262F618BCAE2A9ACCDEE5156CE8DF2CDF2D48C71173CDC2594465B87405D197CF1AED3B7E9671EEB56CA6753C2E6B0')
@@ -11,7 +15,7 @@ tmdb_key = bytearray.fromhex(
 # Notes:
 # https://www.psdevwiki.com/ps3/TITLE_ID
 # https://www.psdevwiki.com/ps4/Online_Connections
-# images can be 400*400 inside Discord Presence with no visual degradation? (needs further testing)
+# images can be 400*400 inside Discord Presence with MINIMAL quality loss!
 
 
 # Physical PS3
@@ -230,4 +234,69 @@ def convertToCSV():
                 spamwriter.writerow([revision, patchRevision, formatVersion, npTitleId, console, names, icons, parentalLevel, pronunciation, contentId, backgroundImage, bgm, category, playTogether, psVr, neoEnable])
 
 
-# convertToCSV()
+
+
+def DownloadPS3Images():
+    file = open("new 4.txt", "r")  # read
+    lines = file.readlines()
+    file.close()
+
+    os.chdir(r"F:\PSimg")
+    #print(lines)
+    for i in range(len(lines)):
+    # check if image already exists
+        titleID = re.search('tmdb/(.*)_', lines[i])
+        titleID = titleID.group(1)
+        if os.path.isfile('{titleID}.png'.format(titleID=titleID)):
+            pass
+        else:
+            print(titleID)
+        # save image
+            urllib.request.urlretrieve(lines[i], "{name}.png".format(name=titleID))
+        # resize image & overwrite original
+            image = Image.open("{titleID}.png".format(titleID=titleID))
+            newImg = image.resize((400, 400))
+            newImg.save("{titleID}.png".format(titleID=titleID))
+
+
+def removeTrailingZero():
+    os.chdir(r"F:\PSimg")
+    x = os.listdir()
+    for i in range(len(x)):
+        z = re.search('(.*)_', x[i])
+        z = z.group(1)
+        print(z)
+        os.rename(x[i], "{z}.png".format(z=z))
+
+
+def resizeImage():  # for testing
+    image = Image.open('bces00510.png')
+    new_image = image.resize((400,400))
+    new_image.save('0_bces00510.png')
+
+
+def findDupes():
+    os.chdir(r"F:\PSimg")
+    files = os.listdir()
+    savedMD5 = []
+    for i in range(len(files)):
+        with open(files[i], 'rb') as f:
+            data = f.read()
+            md5 = hashlib.md5(data).hexdigest()
+            savedMD5.append(md5)
+
+    md5final = []
+    namefinal = []
+    for i in range(len(savedMD5)):
+        if savedMD5[i] not in md5final:
+            md5final.append(savedMD5[i])
+            namefinal.append(files[i])
+        else:   # savedMD5[i] is the same as *some* item of md5final
+            for j in range(len(md5final)):
+                if md5final[j] == savedMD5[i]:
+                    # print(md5final[j], savedMD5[i])
+                    print(namefinal[j], files[i])
+                    # print('')
+
+
+findDupes()
