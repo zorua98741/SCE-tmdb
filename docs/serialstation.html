@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ssapi</title>
+		<script src="tmdb.js"></script>
+		<link rel="stylesheet" href="light-mode.css" id="light-mode">
+	</head>
+	
+	<body onload="getCookie()">
+		<div class="navigation">
+			<span>Theme:</span>
+			<select id="theme" onchange="changeTheme()">
+				<option>Light</option>
+				<option>Dark</option>
+			</select>
+			<span style="float: right;"><a href="index.html">TMDB</a></span>
+		</div>
+		
+		<div class="content">
+			<h1>SerialStation API</h1>
+			<section>
+				<h2>What is this?</h2>
+				<p><a href="https://serialstation.com" target="_blank">SerialStation</a> provides an API to access some of the data held on the site.</p>
+				<p>NOTE: This is all my own understanding, and is likely incorrect.</p>
+				<p>As listed on the api page, there are several types of requests that can be made such as:</p>
+				<ul>
+					<li>titles</li>
+					<li>games</li>
+					<li>releases</li>
+					<li>discs</li>
+					<li>regions</li>
+					<li>systems</li>
+					<li>companies</li>
+					<li>franchises</li>
+					<li>tags</li>
+					<li>age_ratings</li>
+				</ul>
+				<p>This page hopes to document my findings and how I hope to use it in my projects.</p>
+			</section>
+			<section>
+				<h2>Title List</h2>
+				<p>This is likely the only section I will cover and have interest in.</p>
+				
+				<h3>URL Generation</h3>
+				<p>In short, the URL is made up of four components: </p>
+				<ul>
+					<li>The domain: <b>https://api.serialstation.com</b></li>
+					<li>The path: <b>/titles/</b></li>
+					<li>The "title ID type", aka region: <b>?title_id_type=ABCD</b></li>
+					<li>The "title ID number": <b>&title_id_number=12345</b></li>
+				</ul>
+				<p>Combined, this gives the overall format of <b>https://api.serialstation.com/titles/?title_id_type=[titleIdType]&title_id_number=[titleIdNumber]</b></p>
+			</section>
+		</div>
+	</body>
+</html>

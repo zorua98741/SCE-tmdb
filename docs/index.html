@@ -14,6 +14,7 @@
 				<option>Light</option>
 				<option>Dark</option>
 			</select>
+			<span style="float: right;"><a href="serialstation.html">SerialStation</a></span>
 		</div>
 		<div class="content">
 			<h1>SCE-TMDB</h1>
@@ -65,13 +66,13 @@
 				<h2>How are URLs formed?</h2>
 				<p>A TMDB URL is formed using 5 notable parts, these are the domain, path, titleID, hash, and file format.</p>
 				<ul>
-					<li>The <em>domain</em> remains the same, it does not change regardless of the system or titleID used, it is <b>http://tmdb.np.dl.playstation.net/</b>.</li>
-					<li>The <em>path</em> can be either <b>tmdb</b> for XML/PS3 URLs, or <b>tmdb2</b> for JSON/PS4 URLs.</li>
-					<li>The <em>titleID</em>, sometimes referred to as the game ID, is a combination of letters denoting information such as the region of the game, followed by 5 numbers. More information can be found <a href="https://www.psdevwiki.com/ps3/TITLE_ID#Description" target="_blank">here</a>. Note that when generating TMDB links <b>_00</b> is appended to the end of the titleID.</li>
-					<li>The <em>hash</em> uses Hash-based Message Authentication Code, or HMAC, where the input text is the previously mentioned <b>titleID</b>, and the key is in hex encoding as <b>F5DE66D2680E255B2DF79E74F890EBF349262F618BCAE2A9ACCDEE5156CE8DF2CDF2D48C71173CDC2594465B87405D197CF1AED3B7E9671EEB56CA6753C2E6B0</b>.</li>
-					<li>The <em>file format</em> can be either <b>.xml</b> (PS3), or <b>.json</b> (PS4).</li>
+					<li>The <em style="color: red;">domain</em> remains the same, it does not change regardless of the system or titleID used, it is <b>http://tmdb.np.dl.playstation.net/</b>.</li>
+					<li>The <em style="color: #5DADE2;">path</em> can be either <b>tmdb</b> for XML/PS3 URLs, or <b>tmdb2</b> for JSON/PS4 URLs.</li>
+					<li>The <em style="color: green;">titleID</em>, sometimes referred to as the game ID, is a combination of letters denoting information such as the region of the game, followed by 5 numbers. More information can be found <a href="https://www.psdevwiki.com/ps3/TITLE_ID#Description" target="_blank">here</a>. Note that when generating TMDB links <b>_00</b> is appended to the end of the titleID.</li>
+					<li>The <em style="color: orange;">hash</em> uses Hash-based Message Authentication Code, or HMAC, where the input text is the previously mentioned <b>titleID</b>, and the key is in hex encoding as <b>F5DE66D2680E255B2DF79E74F890EBF349262F618BCAE2A9ACCDEE5156CE8DF2CDF2D48C71173CDC2594465B87405D197CF1AED3B7E9671EEB56CA6753C2E6B0</b>.</li>
+					<li>The <em style="color: #633974;">file format</em> can be either <b>.xml</b> (PS3), or <b>.json</b> (PS4).</li>
 				</ul>
-				<p>Combined, this gives the overall format of <b>http://tmdb.np.dl.playstation.net/[tmdb, tmdb2]/[titleID_00]_[Hash]/[titleID_00].[xml, json]</b>
+				<p>Combined, this gives the overall format of <b><span style="color:red;">http://tmdb.np.dl.playstation.net/</span><span style="color: #5DADE2;">[tmdb, tmdb2]</span>/<span style="color: green;">[titleID_00]</span>_<span style="color: orange;">[Hash]</span>/<span style="color: green;">[titleID_00]</span>.<span style="color: #633974;">[xml, json]</span></b>
 			</section>
 			
 			<section>
@@ -100,7 +101,7 @@
 
 			<section>
 				<h2>Speculation</h2>
-				<h3>TitleID License Numbering</h3>
+				<h3>TitleID License Numbering [Not Complete]</h3>
 				<p>On a surface level, the first 2 numbers used in the titleID seem to be chosen with no real reasoning. This section hopes to analyse the results of scraping the TMDB, 
 				and to propose a reason for why different titleIDs start at different numbers.</p>
 				<ul>
